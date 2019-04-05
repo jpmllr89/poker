@@ -1,15 +1,12 @@
-
-
-
-def return_deck():
-    return [
-        {'value':2, 'suit':'Diamond'},
-        {'value':3, 'suit':'Diamond'},
-        {'value':4, 'suit':'Diamond'},
-        {'value':5, 'suit':'Diamond'},
-        {'value':6, 'suit':'Diamond'},
-        {'value':7, 'suit':'Diamond'},
-        {'value':8, 'suit':'Diamond'},
+from random import shuffle
+card = [
+    {'value':2, 'suit':'Diamond'},
+    {'value':3, 'suit':'Diamond'},
+    {'value':4, 'suit':'Diamond'},
+    {'value':5, 'suit':'Diamond'},
+    {'value':6, 'suit':'Diamond'},
+    {'value':7, 'suit':'Diamond'},
+    {'value':8, 'suit':'Diamond'},
         {'value':9, 'suit':'Diamond'},
         {'value':10, 'suit':'Diamond'},
         {'value':'J', 'suit':'Diamond'},
@@ -56,3 +53,22 @@ def return_deck():
         {'value':'K', 'suit':'Club'},
         {'value':'A', 'suit':'Club'}
     ]
+
+
+
+class Card():
+
+    def __init__(self):
+        shuffle(card)
+        self.card = card.pop()
+
+
+    def __repr__(self):
+        print(f"{self.card['value']} of {self.card['suit']}")
+
+
+
+a_card = Card()
+another_card = Card()
+a_card.__repr__()
+another_card.__repr__()
