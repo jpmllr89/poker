@@ -1,9 +1,13 @@
 from cards import Card
-from random import choice
+from random import shuffle
 
 _deck = []
 
+
+hand = []
+
 class Deck():
+
 
 	def __init__(self):
 		for i in range(0, 52):
@@ -27,18 +31,25 @@ class Deck():
 
 
 	def deal_card(self):
-		return _deal(1)
+		return self._deal(1)
 
 
 	def deal_hand(self, num):
 		hand = []
 		for i in range(0, num):
-			hand.append(deal_card(self))
-
+			hand.append(self.deal_card())
 		return hand
+
+
+	def shuffle(self):
+		if len(deck)<52:
+			print("Only full decks can be shuffled")
+			raise ValueError
+
+		return shuffle(deck)
 
 decker = Deck()
 print(decker.count_deck())
-decker.deal_hand(5)
+print(decker.deal_hand(5))
 
-print(decker.hand)
+
