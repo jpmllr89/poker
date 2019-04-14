@@ -1,9 +1,4 @@
 from random import shuffle
-from globals import card
-
-card = card
-
-
 
 class Card:
 
@@ -13,5 +8,5 @@ class Card:
 
 
     def __repr__(self):
-        print(f"{self.card['value']} of {self.card['suit']}")
+        return f"{self.value} of {self.suit}"
 
